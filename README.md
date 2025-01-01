@@ -7,6 +7,9 @@ A Python-based tool for managing translations through the Transifex API, with su
 - Fetch untranslated and unreviewed strings from Transifex
 - Automated translation processing
 - Translation validation and review
+  - Basic PO file validation
+  - Django's compilemessages validation
+  - JSON and YAML validation
 - CSV export for translation management
 - Support for multiple languages and resources
 - Caching mechanism for efficient processing
@@ -16,6 +19,7 @@ A Python-based tool for managing translations through the Transifex API, with su
 - Python 3.10 or higher
 - Transifex API access token
 - OpenAI API key (for automated translations)
+- Django (for PO file validation)
 
 ## Installation
 
@@ -87,6 +91,32 @@ To bypass cache and force new downloads:
 python main.py fetch-strings --mode untranslated --force-download
 ```
 
+### Validate Translations
+The script includes comprehensive validation for translation files:
+
+```bash
+# Validate all translation files
+python main.py validate
+
+# Validate only PO files
+python main.py validate --format po
+
+# Validate files in a specific directory
+python main.py validate --directory path/to/translations
+
+# Skip Django's compilemessages validation for PO files
+python main.py validate --skip-django
+
+# Keep generated .mo files after validation (by default they are removed)
+python main.py validate --keep-mo
+```
+
+The validation process includes:
+- Basic file format validation
+- Placeholder consistency checks
+- Django's compilemessages validation for PO files
+- Automatic cleanup of generated .mo files
+
 ## Output Structure
 
 - `output/`: Contains CSV files with downloaded strings
@@ -100,6 +130,7 @@ The script includes error handling for:
 - Invalid configurations
 - File processing errors
 - Translation failures
+- Django validation errors
 
 ## Contributing
 

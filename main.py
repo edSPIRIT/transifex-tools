@@ -609,18 +609,30 @@ def main():
         "--async", action="store_true", help="Use async download to fetch files"
     )
 
-    # Add validate command
-    validate_parser = subparsers.add_parser("validate", help="Validate translation files")
+    # Validate command
+    validate_parser = subparsers.add_parser(
+        "validate", help="Validate translation files"
+    )
     validate_parser.add_argument(
         "--directory",
         default="translations",
-        help="Directory containing translation files to validate"
+        help="Directory containing translation files to validate",
     )
     validate_parser.add_argument(
         "--format",
-        choices=["po", "json", "yaml", "all"],
+        choices=["all", "po", "json", "yaml"],
         default="all",
-        help="File format to validate"
+        help="File format to validate",
+    )
+    validate_parser.add_argument(
+        "--skip-django",
+        action="store_true",
+        help="Skip Django's compilemessages validation for PO files",
+    )
+    validate_parser.add_argument(
+        "--keep-mo",
+        action="store_true",
+        help="Keep generated .mo files after validation (by default they are removed)",
     )
 
     # Translate command
@@ -716,6 +728,8 @@ def main():
             # Walk through the directory and validate files
             print(f"\nValidating translation files in {args.directory}")
             print(f"Format filter: {args.format}")
+            print(f"Django validation: {'disabled' if args.skip_django else 'enabled'}")
+            print(f"MO files: {'kept' if args.keep_mo else 'removed after validation'}")
             
             results = validator.validate_directory(args.directory)
             validator.print_validation_report()
