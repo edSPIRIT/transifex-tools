@@ -1,0 +1,230 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Fetch Untranslated Strings",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--mode",
+                "untranslated"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Fetch Untranslated Strings (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--mode",
+                "untranslated",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Fetch Unreviewed Strings",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--mode",
+                "unreviewed"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Fetch Unreviewed Strings (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--mode",
+                "unreviewed",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Fetch Async Download",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--async",
+                "--mode",
+                "all"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Fetch Async Download (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "fetch",
+                "--async",
+                "--mode",
+                "all",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Translate Strings",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "untranslated"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Translate Strings (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "untranslated",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Translate & Update",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "untranslated",
+                "--update"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Translate & Update (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "untranslated",
+                "--update",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Review Existing Translations",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "unreviewed"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Review Existing Translations (Force)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "translate",
+                "--mode",
+                "unreviewed",
+                "--force"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Update from Saved",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "update"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Validate All Translations",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "validate"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Validate PO Files",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "validate",
+                "--format",
+                "po"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Validate JSON Files",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "validate",
+                "--format",
+                "json"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Validate YAML Files",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "validate",
+                "--format",
+                "yaml"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Validate Custom Directory",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "validate",
+                "--directory",
+                "path/to/translations"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
